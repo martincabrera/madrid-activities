@@ -9,6 +9,9 @@ Metrics/BlockLength:
     - config/routes.rb
     - config/environments/*.rb
     - lib/tasks/*.rake
+Metrics/MethodLength:
+  Exclude:
+    - db/**/*.rb
 Metrics/AbcSize:
   Exclude:
     - db/migrate/*.rb
