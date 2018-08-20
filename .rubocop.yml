@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.5.1
+Metrics/LineLength:
+  Max: 120
+Metrics/BlockLength:
+  Exclude:
+    - db/**/*.rb
+    - spec/**/*.rb
+    - config/routes.rb
+    - config/environments/*.rb
+    - lib/tasks/*.rake
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*.rb
+Style/Documentation:
+  Enabled: false
+Style/MixinUsage:
+  Exclude:
+    - bin/**
