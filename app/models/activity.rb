@@ -23,5 +23,35 @@
 #
 
 class Activity < ApplicationRecord
+  # associations
   has_many :opening_hours, dependent: :destroy
+
+  # validations
+  validates :name, presence: true
+  validates :category, presence: true
+  validates :location, presence: true
+  validates :district, presence: true
+  validates_uniqueness_of :name, scope: %i[category location district]
+
+  def self.search(params)
+    scope = unscoped
+    scope = category_search(scope, params)
+    scope = location_search(scope, params)
+    district_search(scope, params)
+  end
+
+  def self.category_search(scope, params)
+    return scope unless params.dig(:category)
+    scope.where('lower(category) = ?', params[:category].downcase)
+  end
+
+  def self.location_search(scope, params)
+    return scope unless params.dig(:location)
+    scope.where('lower(location) = ?', params[:location].downcase)
+  end
+
+  def self.district_search(scope, params)
+    return scope unless params.dig(:district)
+    scope.where('lower(district) = ?', params[:district].downcase)
+  end
 end
