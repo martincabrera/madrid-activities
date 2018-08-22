@@ -21,9 +21,9 @@
 
 FactoryBot.define do
   factory :opening_hour do
-    activity nil
-    day_of_the_week 'MyString'
-    start_hour 1
-    end_hour 1
+    activity { nil }
+    day_of_the_week { 'MyString' }
+    start_hour { 1 }
+    end_hour { 1 }
   end
 end

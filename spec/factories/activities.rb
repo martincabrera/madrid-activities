@@ -24,12 +24,12 @@
 
 FactoryBot.define do
   factory :activity do
-    name 'MyString'
-    hours_spent '9.99'
-    category 'MyString'
-    location 'MyString'
-    district 'MyString'
-    latitude '9.99'
-    longitude '9.99'
+    name { 'El Rastro' }
+    hours_spent { 2.5 }
+    category { 'shopping' }
+    location { 'outdoors' }
+    district { 'Centro' }
+    latitude { 40.4087357 }
+    longitude { -3.7081466 }
   end
 end
