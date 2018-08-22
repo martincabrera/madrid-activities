@@ -4,9 +4,8 @@ require 'spec_helper'
 require 'rails_helper'
 
 describe TimeFormatter do
-
-  let(:hours_minutes) { "16:34" }
-  let(:number_of_seconds) { 59640 }
+  let(:hours_minutes) { '16:34' }
+  let(:number_of_seconds) { 59_640 }
 
   context 'when an hh:mm is provided' do
     it 'returns the right amount of seconds' do
