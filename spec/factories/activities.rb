@@ -8,9 +8,9 @@
 #  category    :string
 #  district    :string
 #  hours_spent :decimal(4, 2)
-#  latitude    :decimal(10, 6)
+#  latitude    :decimal(11, 7)
 #  location    :string
-#  longitude   :decimal(10, 6)
+#  longitude   :decimal(11, 7)
 #  name        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

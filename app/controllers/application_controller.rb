@@ -10,7 +10,6 @@ class ApplicationController < ActionController::API
     request.format = :json unless params[:format]
   end
 
-
   def render_error(status, resource = nil)
     render status: status,
            json: (resource ? { error: resource } : nil)

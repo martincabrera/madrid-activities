@@ -8,9 +8,9 @@
 #  category    :string
 #  district    :string
 #  hours_spent :decimal(4, 2)
-#  latitude    :decimal(10, 6)
+#  latitude    :decimal(11, 7)
 #  location    :string
-#  longitude   :decimal(10, 6)
+#  longitude   :decimal(11, 7)
 #  name        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -58,13 +58,15 @@ RSpec.describe Activity, type: :model do
   describe 'validations' do
     it 'is invalid if name-category-location-district are the same as a previous record' do
       create(:activity, name: 'Teatros del Canal', category: 'cultural', location: 'indoors', district: 'Chamberí')
-      new_activity = build(:activity, name: 'Teatros del Canal', category: 'cultural', location: 'indoors', district: 'Chamberí')
+      new_activity = build(:activity, name: 'Teatros del Canal', category: 'cultural',
+                                      location: 'indoors', district: 'Chamberí')
       expect(new_activity).not_to be_valid
     end
 
     it 'is valid if one of these name-category-location-district is different than another previous record' do
       create(:activity, name: 'Teatros del Canal', category: 'cultural', location: 'indoors', district: 'Chamberí')
-      new_activity = build(:activity, name: 'Teatros del Canal', category: 'cultural', location: 'indoors', district: 'Latina')
+      new_activity = build(:activity, name: 'Teatros del Canal', category: 'cultural',
+                                      location: 'indoors', district: 'Latina')
       expect(new_activity).to be_valid
     end
   end

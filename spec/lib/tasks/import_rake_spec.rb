@@ -13,7 +13,7 @@ describe 'Rake Task import:json_file' do
     end.to change(Activity, :count).by(2)
   end
 
-  def json_data
+  def json_data # rubocop:disable Metrics/MethodLength
     [
       {
         "name": 'El Rastro',

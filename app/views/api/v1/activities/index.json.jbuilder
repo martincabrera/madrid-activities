@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.type 'FeatureCollection'
 json.features @activities do |activity|
   json.type 'Feature'
@@ -12,10 +14,8 @@ json.features @activities do |activity|
       json.end_hour TimeFormatter.seconds_to_hours_minutes(opening_hour.end_hour)
     end
   end
-
   json.geometry do
     json.type 'Point'
     json.coordinates [activity.longitude, activity.latitude]
   end
 end
-
