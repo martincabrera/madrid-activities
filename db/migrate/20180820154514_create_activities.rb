@@ -8,8 +8,8 @@ class CreateActivities < ActiveRecord::Migration[5.2]
       t.string :category
       t.string :location
       t.string :district
-      t.decimal :latitude, precision: 10, scale: 6
-      t.decimal :longitude, precision: 10, scale: 6
+      t.decimal :latitude, precision: 11, scale: 7
+      t.decimal :longitude, precision: 11, scale: 7
 
       t.timestamps
     end
