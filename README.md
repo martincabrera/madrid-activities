@@ -10,7 +10,7 @@ The goal of this project is to write a web API to help select activities to do i
 * Make sure Ruby version 2.5.1 is installed and bundler gem available.
 * Execute:
  ```console
-git clone https://github.com/martincabrera/ceetup.git
+git clone https://github.com/martincabrera/madrid-activities.git
 ```
 * Execute:
  ```console
