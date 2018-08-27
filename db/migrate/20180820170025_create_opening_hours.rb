@@ -10,7 +10,6 @@ class CreateOpeningHours < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index(:opening_hours, :start_hour)
-    add_index(:opening_hours, :end_hour)
+    add_index(:opening_hours, :day_of_the_week)
   end
 end

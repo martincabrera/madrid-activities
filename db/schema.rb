@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20_180_820_170_025) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['activity_id'], name: 'index_opening_hours_on_activity_id'
-    t.index ['end_hour'], name: 'index_opening_hours_on_end_hour'
-    t.index ['start_hour'], name: 'index_opening_hours_on_start_hour'
+    t.index ['day_of_the_week'], name: 'index_opening_hours_on_day_of_the_week'
   end
 end
