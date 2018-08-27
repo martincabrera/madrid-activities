@@ -34,9 +34,10 @@ class Activity < ApplicationRecord
   validates_uniqueness_of :name, scope: %i[category location district]
 
   # scopes
-  scope :by_category, -> (category_name) { where('lower(category) = ?', category_name.downcase) }
-  scope :by_district, -> (district_name) { where('lower(district) = ?', district_name.downcase) }
-  scope :by_location, -> (location_name) { where('lower(location) = ?', location_name.downcase) }
+  scope :by_category, ->(category_name) { where('lower(category) = ?', category_name.downcase) }
+  scope :by_district, ->(district_name) { where('lower(district) = ?', district_name.downcase) }
+  scope :by_location, ->(location_name) { where('lower(location) = ?', location_name.downcase) }
+  scope :order_by_hours_spent, -> { order(hours_spent: :desc) }
 
   def self.search(params)
     scope = unscoped
