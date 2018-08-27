@@ -14,11 +14,19 @@
 #
 # Indexes
 #
-#  index_opening_hours_on_activity_id  (activity_id)
-#  index_opening_hours_on_end_hour     (end_hour)
-#  index_opening_hours_on_start_hour   (start_hour)
+#  index_opening_hours_on_activity_id      (activity_id)
+#  index_opening_hours_on_day_of_the_week  (day_of_the_week)
 #
 
 class OpeningHour < ApplicationRecord
+  # associations
   belongs_to :activity
+
+  # validations
+  validates :day_of_the_week, presence: true
+  validates :start_hour, presence: true
+  validates :end_hour, presence: true
+
+  # scopes
+  scope :by_day_of_the_week, ->(day_of_the_week) { where(day_of_the_week: day_of_the_week) }
 end

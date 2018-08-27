@@ -14,16 +14,15 @@
 #
 # Indexes
 #
-#  index_opening_hours_on_activity_id  (activity_id)
-#  index_opening_hours_on_end_hour     (end_hour)
-#  index_opening_hours_on_start_hour   (start_hour)
+#  index_opening_hours_on_activity_id      (activity_id)
+#  index_opening_hours_on_day_of_the_week  (day_of_the_week)
 #
 
 FactoryBot.define do
   factory :opening_hour do
     activity { nil }
-    day_of_the_week { 'MyString' }
-    start_hour { 1 }
-    end_hour { 1 }
+    day_of_the_week { 'mo' }
+    start_hour { 57_600 }
+    end_hour { 72_000 }
   end
 end
