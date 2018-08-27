@@ -14,6 +14,10 @@ git clone https://github.com/martincabrera/madrid-activities.git
 ```
 * Execute:
  ```console
+cd madrid-activities
+```
+* Execute:
+ ```console
 bundle install
 ```
 
