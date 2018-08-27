@@ -2,8 +2,11 @@
 
 Rails.application.routes.draw do
   concern :api_base do
-    resources :activities, only: [:index]
-    resource :recommendation, only: [:show]
+    resources :activities, only: [:index] do
+      collection do
+        get 'recommendation'
+      end
+    end
   end
 
   namespace :api do
