@@ -24,6 +24,13 @@ Inside /lib directory I added the following classes:
 
 There is also a rake task ```rake import:json_file```that imports the madrid.json file that was given as a starting point. As a matter of fact, ```rake db:seed``` invokes internally this rake task to populate the database for the first time.
 
+## API HTTP Status Codes used
+
+Both endpoints return a **200** even when there are no items found since we are dealing with a search, we are not requesting activities by IDs.
+
+With the recommendation endpoint, we return a 422 status code when any of the mandatory params are not present.
+
+
 # Future enhancements
 
     1) Do not recommend outdors activity on a rainy day
