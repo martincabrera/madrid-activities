@@ -18,4 +18,12 @@ describe TimeFormatter do
       expect(described_class.seconds_to_hours_minutes(number_of_seconds)).to eq hours_minutes
     end
   end
+
+  context 'when 2 hh:mm are provided' do
+    it 'calculates the difference in decimal hours' do
+      start_hour = '18:00'
+      end_hour = '19:30'
+      expect(described_class.hours_minutes_range_to_hours(start_hour, end_hour)).to eq 1.5
+    end
+  end
 end
