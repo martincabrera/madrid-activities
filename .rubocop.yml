@@ -20,3 +20,15 @@ Style/Documentation:
 Style/MixinUsage:
   Exclude:
     - bin/**
+Style/StringLiterals:
+  Exclude:
+    - db/*.rb
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - db/*.rb
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - db/*.rb
+Style/NumericLiterals:
+  Exclude:
+    - db/*.rb
